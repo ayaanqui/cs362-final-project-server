@@ -1,8 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 3200;
 
-app.get('/', (_, res) => {
+// Use cors
+app.use(cors());
+
+app.get('/', cors(), (_, res) => {
   res.send({
     message: 'Welcome to the Plant light and temperature measurer API'
   });
